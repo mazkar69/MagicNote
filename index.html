@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes making website | keep Your notes here </title>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- ======================================================================================================== -->
+<!-- ======================================================================================================== -->
+<!-- ======================================================================================================== -->
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(46, 41, 41);
+        color: white;
+        border-radius: 5px;
+        max-height: 4rem;
+        flex-wrap: nowrap;
+
+    }
+
+    #serachtxt {
+
+        min-height: 1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        width: 200px;
+        min-width: 100px;
+        padding: 4px;
+    }
+
+
+
+    .note {
+        border: 2px solid rgb(160, 152, 152);
+        width: 250px;
+        min-height: 20%;
+        padding-inline-start: 12px;
+        padding-inline-end: 12px;
+        margin-left: 5px;
+        margin-top: 5px;
+        background-color: rgb(223, 209, 209);
+
+    }
+
+    ul {
+        display: flex;
+
+    }
+
+    li {
+        text-decoration: none;
+        font-size: 1rem;
+        margin-left: 15px;
+        list-style: none;
+        cursor: pointer;
+    }
+
+    li:hover {
+        color: rgb(236, 214, 214);
+    }
+
+    .main {
+        /* border:2px solid black; */
+        width: 65%;
+        margin: auto;
+        min-height: auto;
+        min-width: 350px;
+        margin-top: 50px;
+    }
+
+    .fontprimary {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2rem;
+    }
+
+    .fontsecoundry {
+        font-family: cursive;
+        font-size: 1rem;
+    }
+
+    .fontthird {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    form {
+        border: 1px solid rgb(160, 152, 152);
+        padding: 34px;
+    }
+
+    button {
+        display: block;
+        background-color: rgb(38, 103, 189);
+        color: white;
+        width: 120px;
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    #yournotes {
+        border: 1px solid rgb(160, 152, 152);
+        padding: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .addednotes {
+        border: 1px solid rgb(160, 152, 152);
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    #noteid {
+        font-size: 22px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .note_btn {
+        display: inline;
+        width: 100px;
+        padding: 8px;
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .impbtn {
+        background-color: rgb(172, 59, 59);
+        color: white;
+        margin-left: 5px;
+    }
+</style>
+<!-- =========================================================================================================== -->
+<!-- =========================================================================================================== -->
+<!-- =========================================================================================================== -->
+
+<body onload="password()">
+
+    <nav class="navbar">
+        <ul>
+            <li>Home</li>
+            <li>Services</li>
+
+        </ul>
+
+        <input type="text" name="search" id="serachtxt" placeholder="Search">
+
+    </nav>
+    <div class="main">
+        <h1 class="fontprimary">Welcome To The Magic Notes</h1>
+        <form action="">
+            <p class="fontthird">Add a notes:</p>
+            <textarea name="notes" id="noteid" cols="25" rows="10"></textarea>
+            <button id='btn_addnotes'>
+                Add notes
+            </button>
+        </form>
+        <h1 class="fontPrimary" id="yournotes">Your Notes</h1>
+
+        <div class="addednotes" id="addeddiv">
+            <!-- <div class="note">
+                  <h2>Your Notes</h2>
+                  <p class="fontsecoundry">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates consequuntur doloremque dolores soluta beatae velit dolor nobis excepturi sunt quos!</p>
+                  <Button class="note_btn" id="delete_note">Delete</Button>
+                  <Button class="note_btn impbtn" id="mark_imp">Mark Imp.</Button>
+              </div> -->
+        </div>
+
+        <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+        <footer class="w3-container w3-teal w3-center w3-margin-top">
+            <p>Find me on social media.</p>
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+            <p class="w3-small">This website was made By <b>AzKar</b> </p>
+            <a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom"
+                href="https://github.com/mazkar69/" target="_blank">Check my GitHub repository </a> <!-- End footer -->
+        </footer>
+
+    </div>
+
+    <!-- ======================================Java Script============================================= -->
+    <!-- ============================================================================================== -->
+    <!-- ============================================================================================== -->
+
+
+    <script>
+        // if (localStorage.getItem("username") === null) {
+        //     alert("no")
+        // }
+        show();
+        var array_content = [];
+        let btn = document.getElementById('btn_addnotes');
+        btn.addEventListener('click', addnotes);
+
+        function addnotes() {
+
+            event.preventDefault()
+            let notes = document.getElementById('noteid');
+            if (notes.value.length == 0) {
+                notes.style.border = "2px solid red";
+            }
+            else {
+
+                if (localStorage.getItem("notes_contant") === null) {
+                    array_content.push(notes.value);
+                    localStorage.setItem("notes_contant", JSON.stringify(array_content))
+                    show();
+                    notes.style.border = "1px solid black";
+                    notes.value="";
+
+
+                }
+                else {
+                    array_content = JSON.parse(localStorage.getItem("notes_contant"));
+                    array_content.push(notes.value);
+                    localStorage.setItem("notes_contant", JSON.stringify(array_content))
+                    show();
+                    notes.style.border = "1px solid black";
+                    notes.value="";
+
+
+                }
+
+
+
+
+            }
+
+
+        }
+
+
+        function show() {
+            if (localStorage.getItem("notes_contant") === null) {
+                array_content = []
+
+            }
+            else {
+                let html = "";
+                array_content = JSON.parse(localStorage.getItem("notes_contant"));
+                // console.log(array_content);
+
+                Array.from(array_content).forEach(function (element, index) {
+
+                    html = html + `<div class="note">
+                  <h2>Your Notes</h2>
+                  <p class="fontsecoundry" ">${element}</p>
+                  <Button class="note_btn" id="${index}" onclick="deleteNote(this.id)">Delete</Button>
+                  <Button class="note_btn impbtn" id="imp${index}" onclick="mrk_imp(this.id)">Mark Imp.</Button>
+              </div>`;
+
+
+
+
+                })
+
+                let outer_note = document.getElementById("addeddiv");
+                outer_note.innerHTML = html;
+            }
+
+        }
+
+        function deleteNote(index) {
+            // console.log("This cart will remove "+ index)
+            array_content = JSON.parse(localStorage.getItem("notes_contant"));
+            array_content.splice(index, 1);
+            localStorage.setItem("notes_contant", JSON.stringify(array_content));
+            show();
+
+
+            //     let notes = localStorage.getItem("notes");
+            //     if (notes == null) {
+            //         notesObj = [];
+            //     } else {
+            //         notesObj = JSON.parse(notes);
+            //     }
+
+            //     notesObj.splice(index, 1);
+            //     localStorage.setItem("notes", JSON.stringify(notesObj));
+            //     showNotes();
+            // }
+        }
+        function mrk_imp(index){
+            // console.log("Working"+index)
+            let parent_node=document.getElementById(index).parentNode
+            parent_node.style.backgroundColor="rgb(170, 22, 22)";
+            parent_node.style.color="white";
+        }
+
+        //====================Search==========================
+        let search = document.getElementById("serachtxt")
+        search.addEventListener("input", function () {
+
+            let inputVal = search.value.toLowerCase();
+            // console.log('Input event fired!', inputVal);
+            let noteCards = document.getElementsByClassName('note');
+            Array.from(noteCards).forEach(function (element) {
+                let cardTxt = element.getElementsByTagName("p")[0].innerText;
+                if (cardTxt.includes(inputVal)) {
+                    element.style.display = "block";
+                }
+                else {
+                    element.style.display = "none";
+                }
+                // console.log(cardTxt);
+            })
+        })
+
+
+
+        function password() {
+            if (localStorage.getItem("password") === null) {
+                let newpass = prompt("Please Set The Password, It help to access the notes.")
+                localStorage.setItem("password", newpass)
+
+            }
+            else {
+
+                while (1) {
+                    let passwrd=prompt("Please enter your Password")
+                    if(passwrd == localStorage.getItem('password')){
+                        break;
+                    }
+                }
+               
+            }
+        }
+    </script>
+
+</body>
+
+</html>
